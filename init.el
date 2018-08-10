@@ -104,6 +104,13 @@
 ;; line numbers
 (global-linum-mode t) ;; enable line numbers globally
 
+;; Line spacing increased
+(defun set-bigger-spacing ()
+  (setq-local default-text-properties '(line-spacing 0.05 line-height 1.05)))
+(add-hook 'text-mode-hook 'set-bigger-spacing)
+(add-hook 'prog-mode-hook 'set-bigger-spacing)
+
+
 ;; highlight current line
 (global-hl-line-mode 1)
 (set-face-background hl-line-face "dark slate gray")
